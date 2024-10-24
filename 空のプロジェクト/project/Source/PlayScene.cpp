@@ -3,10 +3,12 @@
 
 PlayScene::PlayScene()
 {
+
 }
 
 PlayScene::~PlayScene()
 {
+
 }
 
 void PlayScene::Update()
