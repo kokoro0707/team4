@@ -50,8 +50,18 @@
     <ClCompile Include="Library\Time.cpp">
       <Filter>Library</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Player.cpp" />
-    <ClCompile Include="Source\Boll.cpp" />
+    <ClCompile Include="Source\Vector2.cpp">
+      <Filter>PlayScene</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Boll.cpp">
+      <Filter>PlayScene</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Player.cpp">
+      <Filter>PlayScene</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Stage.cpp">
+      <Filter>PlayScene</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Screen.h" />
@@ -113,8 +123,21 @@
     <ClInclude Include="Library\Time.h">
       <Filter>Library</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Player.h" />
-    <ClInclude Include="Source\Boll.h" />
+    <ClInclude Include="Vector2.h">
+      <Filter>PlayScene</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Boll.h">
+      <Filter>PlayScene</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Player.h">
+      <Filter>PlayScene</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Stage.h">
+      <Filter>PlayScene</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Stage1.h">
+      <Filter>PlayScene</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Library">
