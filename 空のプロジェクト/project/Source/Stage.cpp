@@ -1,0 +1,32 @@
+#include "Stage.h"
+
+const int CHIP_SIZE = 40;
+
+#include "Stage1.h"
+
+Stage::Stage()
+{
+	hImage = LoadGraph("data/image/parts.png");
+	for (int j = 0; j < HEIGHT; j++) {
+		for (int i = 0; i < WIDTH; i++) {
+
+		}
+	}
+}
+
+Stage::~Stage()
+{
+}
+
+void Stage::Draw()
+{
+	for (int j = 0; j < HEIGHT; j++) {
+		int y = j * 40 + 100;
+		for (int i = 0; i < WIDTH; i++) {
+			int x = i * 40 + 100;
+			if (map[j][i] == 1) {
+				DrawRectGraph(x, y, 0, 40, 40, 40, hImage, TRUE);
+			}
+		}
+	}
+}

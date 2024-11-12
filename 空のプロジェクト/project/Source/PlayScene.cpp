@@ -1,8 +1,11 @@
 #include "PlayScene.h"
+#include "../Library/SceneManager.h"
+#include "Stage.h"
 #include <DxLib.h>
 
 PlayScene::PlayScene()
 {
+	Stage* s = Instantiate<Stage>();
 
 }
 
@@ -20,6 +23,8 @@ void PlayScene::Update()
 
 void PlayScene::Draw()
 {
+	SceneBase::Draw();
+
 	DrawString(0, 0, "PLAY SCENE", GetColor(255, 255, 255));
 	DrawString(100, 400, "Push [T]Key To Title", GetColor(255, 255, 255));
 }
