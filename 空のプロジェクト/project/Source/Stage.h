@@ -1,7 +1,6 @@
 #pragma once
-#include "Library/gameObject.h"
-#include "Source/Vector2.h"
-
+#include "../Library/GameObject.h"
+#include "Vector2.h"
 class Stage : public GameObject {
 public:
 	Stage();
@@ -11,8 +10,8 @@ public:
 	int IsWallDown(VECTOR2 pos);
 	int IsWallLeft(VECTOR2 pos);
 	int IsWallUp(VECTOR2 pos);
-	bool IsGoal(VECTOR2 pos);
 	int hImage;
 
-	int scroll;
+
 };
+
