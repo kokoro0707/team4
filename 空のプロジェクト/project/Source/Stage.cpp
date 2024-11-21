@@ -1,7 +1,7 @@
 #include "Stage.h"
 #include "Player.h"
 
-const int CHIP_SIZE = 60;
+const int CHIP_SIZE = 64;
 
 #include "Stage1.h"
 
