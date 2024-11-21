@@ -12,8 +12,5 @@ public:
 
 	int hImage;
 	VECTOR2 position;
-
-
-
 };
 
