@@ -62,6 +62,7 @@
     <ClCompile Include="Source\Stage.cpp">
       <Filter>PlayScene</Filter>
     </ClCompile>
+    <ClCompile Include="item.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Screen.h" />
@@ -138,6 +139,7 @@
     <ClInclude Include="Source\Stage1.h">
       <Filter>PlayScene</Filter>
     </ClInclude>
+    <ClInclude Include="item.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Library">
