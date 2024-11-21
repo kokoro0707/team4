@@ -1,5 +1,6 @@
 #include "Player.h"
 #include "Stage.h"
+#include"../ImGui/imgu.h"
 
 Player::Player()
 {
@@ -16,6 +17,15 @@ Player::~Player()
 
 void Player::Update()
 {
+	//ImGui‚ğg‚¤‚Æ‚«(g‚¤‚Æ‚«‚ÍŠÖ”‚ğ.h‚É“ü—Í‚µ‚Ä‚©‚ç)
+	/* timer += Time::DeltaTime();
+	int count = 3;
+	ImGui::Begin("Variables");
+	ImGui::InputFloat("position", &position); position‚ÌŠ‚Íg‚Á‚Ä‚¢‚éŠÖ”‚ğ“ü—Í‚·‚é
+	ImGui::InputInt("COUNT", &count);
+	ImGui::End(); */
+
+	
 	Stage* s = FindGameObject<Stage>();
 
 	if (CheckHitKey(KEY_INPUT_W)) {
