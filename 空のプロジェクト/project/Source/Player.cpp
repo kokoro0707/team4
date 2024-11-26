@@ -1,6 +1,6 @@
 #include "Player.h"
 #include "Stage.h"
-#include"../ImGui/imgu.h"
+//#include"../ImGui/imgu.h"
 
 Player::Player()
 {
