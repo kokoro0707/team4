@@ -1,5 +1,6 @@
 #include "Player.h"
 #include "Stage.h"
+#include"Boll.h"
 //#include"../ImGui/imgu.h"
 
 Player::Player()
@@ -55,6 +56,20 @@ void Player::Update()
 		position.x -= push;
 		push = s->IsWallRight(position + VECTOR2(39, 39));
 		position.x -= push;
+	}
+	
+	if (CheckHitKey(KEY_INPUT_SPACE)) {
+		if (prevKey == false) {
+			Boll* st = Instantiate<Boll>();
+			st->position = position;
+			
+			st->position.x += 30;
+			st->position.y += 5;
+		}
+		prevKey = true;
+	}
+	else {
+		prevKey = false;
 	}
 }
 

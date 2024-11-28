@@ -153,6 +153,7 @@
     <ClInclude Include="Library\Time.h" />
     <ClInclude Include="Source\Boll.h" />
     <ClInclude Include="Source\BootScene.h" />
+    <ClInclude Include="Source\config.h" />
     <ClInclude Include="Source\Player.h" />
     <ClInclude Include="Source\Screen.h" />
     <ClInclude Include="Source\PlayScene.h" />

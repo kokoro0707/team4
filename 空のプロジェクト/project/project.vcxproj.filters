@@ -138,6 +138,9 @@
     <ClInclude Include="Source\Stage1.h">
       <Filter>PlayScene</Filter>
     </ClInclude>
+    <ClInclude Include="Source\config.h">
+      <Filter>TitleScene</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Library">
