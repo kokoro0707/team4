@@ -62,6 +62,7 @@
     <ClCompile Include="Source\Stage.cpp">
       <Filter>PlayScene</Filter>
     </ClCompile>
+    <ClCompile Include="Wall.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Screen.h" />
@@ -144,6 +145,7 @@
     <ClInclude Include="Source\minwindef.h">
       <Filter>PlayScene</Filter>
     </ClInclude>
+    <ClInclude Include="Wall.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Library">

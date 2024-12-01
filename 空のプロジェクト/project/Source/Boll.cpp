@@ -2,6 +2,7 @@
 #include <cmath> 
 #include "Player.h"
 #include"config.h"
+#include "Stage.h"
 
 Boll::Boll()
 {
