@@ -2,7 +2,7 @@
 #include "../Library/gameObject.h"
 #include "Vector2.h"
 
-class Player:public GameObject
+class Player :public GameObject
 {
 public:
 	Player();
@@ -15,6 +15,9 @@ public:
 	float velocity;
 	bool prevJumpKey; // 前のジャンプキー
 	bool onGround; // 地面にいる
+	bool prevKey; //前のキーを保存する
+	float timeElapsed;     // 経過時間
+	bool isSpacePressed;   // スペースキーが押されたかどうかのフラグ
 
 
 };

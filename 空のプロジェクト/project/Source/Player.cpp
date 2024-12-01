@@ -1,5 +1,6 @@
 #include "Player.h"
 #include "Stage.h"
+#include"Boll.h"
 //#include"../ImGui/imgu.h"
 
 Player::Player()
@@ -25,12 +26,12 @@ void Player::Update()
 	ImGui::InputInt("COUNT", &count);
 	ImGui::End(); */
 
-	
+
 	Stage* s = FindGameObject<Stage>();
 
 	if (CheckHitKey(KEY_INPUT_W)) {
 		position.y -= 2;
-		int push = s->IsWallUp(position + VECTOR2(0,0));
+		int push = s->IsWallUp(position + VECTOR2(0, 0));
 		position.y += push;
 		push = s->IsWallUp(position + VECTOR2(39, 39));
 		position.y += push;
@@ -56,10 +57,24 @@ void Player::Update()
 		push = s->IsWallRight(position + VECTOR2(39, 39));
 		position.x -= push;
 	}
+
+	if (CheckHitKey(KEY_INPUT_SPACE)) {
+		if (prevKey == false) {
+			Boll* st = Instantiate<Boll>();
+			st->position = position;
+
+			st->position.x += 30;
+			st->position.y += 5;
+		}
+		prevKey = true;
+	}
+	else {
+		prevKey = false;
+	}
 }
 
 void Player::Draw()
 {
 	Stage* s = FindGameObject<Stage>();
-	DrawRectGraph(position.x,position.y, 0, 0, 50, 50, hImage, TRUE);
+	DrawRectGraph(position.x, position.y, 0, 0, 50, 50, hImage, TRUE);
 }

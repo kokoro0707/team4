@@ -138,6 +138,12 @@
     <ClInclude Include="Source\Stage1.h">
       <Filter>PlayScene</Filter>
     </ClInclude>
+    <ClInclude Include="Source\config.h">
+      <Filter>PlayScene</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\minwindef.h">
+      <Filter>PlayScene</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Library">
