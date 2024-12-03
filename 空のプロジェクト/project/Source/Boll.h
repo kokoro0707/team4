@@ -11,7 +11,11 @@ public:
 	~Boll();
 	void Update() override;
 	void Draw() override;
+<<<<<<< HEAD
 
+=======
+	
+>>>>>>> 5c95bcf4d6dde1faf22398a59ddeb03df4ffed40
 	int hImage; //画像
 	VECTOR2 position;
 	float timeElapsed;     // 経過時間
@@ -23,7 +27,11 @@ public:
 private:
 	int ballVx, ballVy;				//	ボール速度(フレーム毎)
 	int radius;
+<<<<<<< HEAD
 
+=======
+	
+>>>>>>> 5c95bcf4d6dde1faf22398a59ddeb03df4ffed40
 
 };
 

@@ -154,7 +154,10 @@
     <ClInclude Include="Source\Boll.h" />
     <ClInclude Include="Source\BootScene.h" />
     <ClInclude Include="Source\config.h" />
+<<<<<<< HEAD
     <ClInclude Include="Source\minwindef.h" />
+=======
+>>>>>>> 5c95bcf4d6dde1faf22398a59ddeb03df4ffed40
     <ClInclude Include="Source\Player.h" />
     <ClInclude Include="Source\Screen.h" />
     <ClInclude Include="Source\PlayScene.h" />

@@ -140,12 +140,17 @@
       <Filter>PlayScene</Filter>
     </ClInclude>
     <ClInclude Include="Source\config.h">
+<<<<<<< HEAD
       <Filter>PlayScene</Filter>
     </ClInclude>
     <ClInclude Include="Source\minwindef.h">
       <Filter>PlayScene</Filter>
     </ClInclude>
     <ClInclude Include="Wall.h" />
+=======
+      <Filter>TitleScene</Filter>
+    </ClInclude>
+>>>>>>> 5c95bcf4d6dde1faf22398a59ddeb03df4ffed40
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Library">

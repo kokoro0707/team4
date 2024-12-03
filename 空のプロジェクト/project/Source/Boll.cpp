@@ -2,7 +2,10 @@
 #include <cmath> 
 #include "Player.h"
 #include"config.h"
+<<<<<<< HEAD
 #include "Stage.h"
+=======
+>>>>>>> 5c95bcf4d6dde1faf22398a59ddeb03df4ffed40
 
 Boll::Boll()
 {
@@ -52,4 +55,9 @@ void Boll::SetFlip(bool flagX, int flagY)
 	{
 		ballVy = -ballVy;
 	}
+<<<<<<< HEAD
 }
+=======
+}
+
+>>>>>>> 5c95bcf4d6dde1faf22398a59ddeb03df4ffed40
