@@ -7,7 +7,7 @@ const int CHIP_SIZE = 64;
 
 Stage::Stage()
 {
-	hImage = LoadGraph("data/image/parts.png");
+	hImage = LoadGraph("data/image/Tile.png");
 	for (int j = 0; j < HEIGHT; j++) {
 		for (int i = 0; i < WIDTH; i++) {
 			if (map[j][i] == 9) {
@@ -31,7 +31,7 @@ void Stage::Draw()
 		for (int i = 0; i < WIDTH; i++) {
 			int x = i * 60 + 100;
 			if (map[j][i] == 1) {
-				DrawRectGraph(x, y, 0, 64, 64, 64, hImage, TRUE);
+				DrawRectGraph(x, y, 0, 76, 65, 65, hImage, TRUE);
 			}
 		}
 	}

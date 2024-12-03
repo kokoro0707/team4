@@ -5,7 +5,7 @@
 
 Player::Player()
 {
-	hImage = LoadGraph("data/image/TankBlue.png");
+	hImage = LoadGraph("data/image/Player.png");
 	position.x = 0;
 	position.y = 0;
 
@@ -33,36 +33,108 @@ void Player::Update()
 	Stage* s = FindGameObject<Stage>();
 
 	//if (CheckHitKey(KEY_INPUT_W)) {
-	if(InputY<=200){
+	if (InputY <= -100) {
 		position.y -= 2;
 		int push = s->IsWallUp(position + VECTOR2(0,0));
 		position.y += push;
 		push = s->IsWallUp(position + VECTOR2(39, 39));
 		position.y += push;
+
+		if (pad & PAD_INPUT_Y) {
+			timer += Time::DeltaTime();
+			if (timer < 0.1f) {
+				position.y -= dashspeed + 8;
+			}
+			position.y -= dashspeed;
+			if (timer < 0.3f) {
+				position.y -= dashspeed - 1;
+			}
+			if (prevKey2 == true) {
+				timer = 0.0f;
+			}
+			prevKey2 = false;
+		}
+		else {
+			prevKey2 = true;
+		}
 	}
 	//if (CheckHitKey(KEY_INPUT_S)) {
-	if(InputY>=200){
+	if(InputY>=100){
 		position.y += 2;
 		int push = s->IsWallDown(position + VECTOR2(0, 39));
 		position.y -= push;
 		push = s->IsWallDown(position + VECTOR2(39, 39));
 		position.y -= push;
+
+		if (pad & PAD_INPUT_Y) {
+			timer += Time::DeltaTime();
+			if (timer < 0.1f) {
+				position.y += dashspeed + 8;
+			}
+			position.y += dashspeed;
+			if (timer < 0.3f) {
+				position.y += dashspeed - 1;
+			}
+			if (prevKey2 == true) {
+				timer = 0.0f;
+			}
+			prevKey2 = false;
+		}
+		else {
+			prevKey2 = true;
+		}
 	}
 	//if (CheckHitKey(KEY_INPUT_A)) {
-	if (InputX <= -200) {
+	if (InputX <= -100) {
 		position.x -= 2;
 		int push = s->IsWallLeft(position + VECTOR2(0, 0));
 		position.x += push;
 		push = s->IsWallLeft(position + VECTOR2(0, 39));
 		position.x += push;
+
+		if (pad & PAD_INPUT_Y) {
+			timer += Time::DeltaTime();
+			if (timer < 0.1f) {
+				position.x -= dashspeed + 8;
+			}
+			position.x -= dashspeed;
+			if (timer < 0.3f) {
+				position.x -= dashspeed - 1;
+			}
+			if (prevKey2 == true) {
+				timer = 0.0f;
+			}
+			prevKey2 = false;
+		}
+		else {
+			prevKey2 = true;
+		}
 	}
 	//if (CheckHitKey(KEY_INPUT_D)) {
-	if(InputX>=200){
+	if (InputX >= 100) {
 		position.x += 2;
 		int push = s->IsWallRight(position + VECTOR2(39, 0));
 		position.x -= push;
 		push = s->IsWallRight(position + VECTOR2(39, 39));
 		position.x -= push;
+
+			if (pad & PAD_INPUT_Y ) {
+				timer += Time::DeltaTime();
+				if (timer < 0.1f) {
+					position.x += dashspeed + 8;
+				}
+				position.x += dashspeed;
+				if (timer < 0.3f) {
+					position.x += dashspeed - 1;
+				}
+				if (prevKey2 == true) {
+					timer = 0.0f;
+				}
+				prevKey2 = false;
+			}
+			else {
+				prevKey2 = true;
+			}
 	}
 	
 	//if (CheckHitKey(KEY_INPUT_SPACE)) {
@@ -84,5 +156,5 @@ void Player::Update()
 void Player::Draw()
 {
 	Stage* s = FindGameObject<Stage>();
-	DrawRectGraph(position.x,position.y, 0, 0, 50, 50, hImage, TRUE);
+	DrawRectGraph(position.x,position.y, 0, 0, 40, 40, hImage, TRUE);
 }
