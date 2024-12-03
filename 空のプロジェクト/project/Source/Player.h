@@ -19,6 +19,9 @@ public:
 	float timeElapsed;     // 経過時間
 	bool isSpacePressed;   // スペースキーが押されたかどうかのフラグ
 
+	int InputX, InputY;
+	int Key;
+	int speed = 2;
 
 };
 
