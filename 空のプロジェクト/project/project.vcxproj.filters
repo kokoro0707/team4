@@ -62,6 +62,9 @@
     <ClCompile Include="Source\Stage.cpp">
       <Filter>PlayScene</Filter>
     </ClCompile>
+    <ClCompile Include="Source\item.cpp">
+      <Filter>PlayScene</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Screen.h" />
@@ -140,6 +143,9 @@
     </ClInclude>
     <ClInclude Include="Source\config.h">
       <Filter>TitleScene</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\item.h">
+      <Filter>PlayScene</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
