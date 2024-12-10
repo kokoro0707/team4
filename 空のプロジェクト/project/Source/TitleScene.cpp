@@ -1,5 +1,8 @@
-#include "TitleScene.h"
 #include <DxLib.h>
+#include <cassert>
+#include "TitleScene.h"
+#include "../Library/Time.h"
+
 
 TitleScene::TitleScene()
 {
@@ -11,7 +14,7 @@ TitleScene::~TitleScene()
 
 void TitleScene::Update()
 {
-	if (CheckHitKey(KEY_INPUT_P)) {
+	if (CheckHitKey(KEY_INPUT_S)) {
 		SceneManager::ChangeScene("PLAY");
 	}
 	if (CheckHitKey(KEY_INPUT_ESCAPE)) {
