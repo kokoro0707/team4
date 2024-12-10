@@ -2,13 +2,17 @@
 #include <cmath> 
 #include "Player.h"
 #include"config.h"
+#include <cassert>
 
 Boll::Boll()
 {
-	hImage = LoadGraph("data/image/Stone.png");
+	hImage = LoadGraph("data/image/Effect.png");
 	position.x = 10;
 	position.y = 10;
 
+	//	移動速度
+	ballVx = BALL_SPEED;
+	ballVy = BALL_SPEED;
 }
 
 Boll::~Boll()
@@ -30,7 +34,7 @@ void Boll::Update()
 
 void Boll::Draw()
 {
-	DrawRectGraph(position.x, position.y, 0, 0, 64, 64, hImage, TRUE);
+	DrawRectGraph(position.x, position.y, 0, 0, 32, 32, hImage, TRUE);
 }
 
 // ボールの中心座標の取得

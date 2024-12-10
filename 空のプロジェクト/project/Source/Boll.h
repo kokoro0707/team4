@@ -5,7 +5,12 @@
 
 class Boll : public GameObject {
 private:
-	const int BALL_SPEED = 5;
+	
+	const int BALL_SPEED = 100;
+private:
+	int ballVx, ballVy;				//	ボール速度(フレーム毎)
+	int radius;//	半径
+
 public:
 	Boll();
 	~Boll();
@@ -20,9 +25,7 @@ public:
 	void SetFlip(bool flagX, int flagY);					// 進行方向の反転
 
 
-private:
-	int ballVx, ballVy;				//	ボール速度(フレーム毎)
-	int radius;
+
 	
 
 };
