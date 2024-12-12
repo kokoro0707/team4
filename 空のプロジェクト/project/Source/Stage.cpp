@@ -45,7 +45,7 @@ void Stage::Draw()
 		for (int i = 0; i < WIDTH; i++) {
 			int x = i * 60 + 100;
 			if (map[j][i] == 1) {
-				DrawRectGraph(x, y, 0, 76, 65, 65, hImage, TRUE);
+				DrawRectGraph(x, y, 0, 64, 64, 64, hImage, TRUE);
 			}
 		}
 	}
