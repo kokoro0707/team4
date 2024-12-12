@@ -2,14 +2,15 @@
 #include "../Library/gameObject.h"
 #include "Vector2.h"
 
-class Player:public GameObject
+class Player2 :public GameObject
 {
 public:
-	Player();
-	~Player();
+	Player2();
+	~Player2();
 	void Update()override;
 	void Draw() override;
 
+	int BaImage;
 	int hImage;
 	VECTOR2 position;
 	float velocity;
@@ -25,7 +26,7 @@ public:
 	int speed = 3;
 	int dashspeed = 4;
 	float timer;
-	int BaImage;
+	float Angel = 0.0f;
 
 };
 
