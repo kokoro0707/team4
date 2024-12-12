@@ -6,9 +6,9 @@
 class Boll : public GameObject {
 private:
 	
-	const int BALL_SPEED = 100;
+	const int BALL_SPEED = 5;
 private:
-	int ballVx, ballVy;				//	ボール速度(フレーム毎)
+//	int ballVx, ballVy;				//	ボール速度(フレーム毎)
 	int radius;//	半径
 
 public:
@@ -19,6 +19,7 @@ public:
 	
 	int hImage; //画像
 	VECTOR2 position;
+	VECTOR2 velocity;
 	float timeElapsed;     // 経過時間
 	bool CheckCollisionWithRectangle(float rectX, float rectY, float rectWidth, float rectHeight);
 	void GetBallCenter(int* centerX, int* centerY);			// ボールの中心座標の取得
