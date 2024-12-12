@@ -32,8 +32,8 @@ void Player::Update()
 	
 	Stage* s = FindGameObject<Stage>();
 
-	//if (CheckHitKey(KEY_INPUT_W)) {
-	if (InputY <= -100) {
+	if (CheckHitKey(KEY_INPUT_W)) {
+	//if (InputY <= -100) {
 		position.y -= 2;
 		int push = s->IsWallUp(position + VECTOR2(0,0));
 		position.y += push;
