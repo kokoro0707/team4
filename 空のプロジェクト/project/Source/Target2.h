@@ -12,5 +12,7 @@ public:
 	int TrImage;
 	VECTOR2 position2;
 	int InputX2, InputY2;
+
+	const VECTOR2 GetCenterPosition();
 };
 
