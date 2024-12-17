@@ -8,7 +8,7 @@
 
 Target::Target()
 {
-	TrImage = LoadGraph("data/image/Effect.png");
+	TrImage = LoadGraph("data/image/PlayerEffect.png");
 	position.x = 0;
 	position.y = 0;
 }
@@ -35,6 +35,11 @@ void Target::Update()
 
 void Target::Draw()
 {
-	DrawRectGraph(position.x, position.y, 90, 0, 30, 40, TrImage, TRUE);
+	DrawRectGraph(position.x, position.y, 0, 40, 40, 40, TrImage, TRUE);
+}
+
+const VECTOR2 Target::GetCenterPosition()
+{
+	return VECTOR2(position.x, position.y);
 }
 
