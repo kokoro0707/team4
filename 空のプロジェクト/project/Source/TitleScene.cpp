@@ -2,6 +2,10 @@
 #include <cassert>
 #include "TitleScene.h"
 #include "../Library/Time.h"
+#include <iostream>
+#include <chrono>
+#include <thread>
+
 
 
 TitleScene::TitleScene()
@@ -14,13 +18,20 @@ TitleScene::~TitleScene()
 
 void TitleScene::Update()
 {
-	if (CheckHitKey(KEY_INPUT_S)) {
+	if (CheckHitKey(KEY_INPUT_SPACE))
+	{
+		for (int i = 0; i < 3; ++i) {
+	
+			std::this_thread::sleep_for(std::chrono::seconds(1));
+
+		}
 		SceneManager::ChangeScene("PLAY");
-	}
-	if (CheckHitKey(KEY_INPUT_ESCAPE)) {
-		SceneManager::Exit();
+		if (CheckHitKey(KEY_INPUT_ESCAPE)) {
+			SceneManager::Exit();
+		}
 	}
 }
+
 
 
 void TitleScene::Draw()
