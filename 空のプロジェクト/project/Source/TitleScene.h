@@ -6,6 +6,7 @@ class TitleScene : public SceneBase
 {
 private:
 
+
 private:
 	int bgHandle;			//	画像ハンドル(タイトル画面)
 	int pushKeyHandle;		//	画像ハンドル(PUSH SPACE KEY)
