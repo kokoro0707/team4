@@ -17,6 +17,14 @@ item::~item()
 
 void item::Update()
 {
+	if (got) {
+		counter -= 1;
+		if (counter = 0) {
+			DestroyMe();
+		}
+		return;
+	}
+
 	Player* p = FindGameObject<Player>();        //相手のインスタンスを取得　　　
 	VECTOR2 playerPos = p->position;            //相手の座標を取得
 	if (CircleHit(playerPos, position, 60)) {  //円の当たり判定　　　　　　　　　　　　　　　
@@ -32,7 +40,7 @@ void item::Draw()
 
 	Stage* s = FindGameObject<Stage>();
 
-	DrawRectGraph(position.x, position.y, 120, 80, 64, 64, hImage, TRUE);
+	DrawRectGraph(position.x, position.y, 40, 80, 64, 64, hImage, TRUE);
 }
 
 
