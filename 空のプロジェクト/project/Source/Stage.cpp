@@ -11,7 +11,6 @@ const int CHIP_SIZE = 64;
 
 Stage::Stage()
 {
-	hImage = LoadGraph("data/iamge/Item2.png");
 	hImage = LoadGraph("data/image/Tile.png");
 	for (int j = 0; j < HEIGHT; j++) {
 		for (int i = 0; i < WIDTH; i++) {
