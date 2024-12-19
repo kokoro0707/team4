@@ -1,22 +1,41 @@
 #include "item.h"
+#include <DxLib.h>
+#include "Player.h"
+#include "Stage.h"
 
-itam::itam()
+item::item()
 {
-	hImage = LoadGraph("data/iamge/item.png");
+	hImage = LoadGraph("data/iamge/Item2.png");
 
+	got = false;
 }
 
-itam::~itam()
-{
 
+item::~item()
+{
 }
 
-void itam::Update()
+void item::Update()
 {
+	Player* p = FindGameObject<Player>();        //相手のインスタンスを取得　　　
+	VECTOR2 playerPos = p->position;            //相手の座標を取得
+	if (CircleHit(playerPos, position, 60)) {  //円の当たり判定　　　　　　　　　　　　　　　
+		got = true;
 
+		counter = 20;
+
+	}
 }
 
-void itam::Draw()
+void item::Draw()
 {
-	DrawRectGraph(position.x, position.y, 120, 0, 80, 80, hImage, TRUE);
+
+	Stage* s = FindGameObject<Stage>();
+
+	DrawRectGraph(position.x, position.y, 120, 80, 64, 64, hImage, TRUE);
 }
+
+
+
+
+

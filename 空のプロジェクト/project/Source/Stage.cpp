@@ -3,6 +3,7 @@
 #include "Target.h"
 #include "Player2.h"
 #include "Target2.h"
+#include"item.h"
 
 const int CHIP_SIZE = 64;
 
@@ -10,6 +11,7 @@ const int CHIP_SIZE = 64;
 
 Stage::Stage()
 {
+	hImage = LoadGraph("data/iamge/Item2.png");
 	hImage = LoadGraph("data/image/Tile.png");
 	for (int j = 0; j < HEIGHT; j++) {
 		for (int i = 0; i < WIDTH; i++) {
@@ -29,7 +31,11 @@ Stage::Stage()
 				t2->position2.x = i * 60 + 100;
 				t2->position2.y = j * 60 + 100;
 			}
-
+			if (map[j][i] == 2) {
+				item* it = Instantiate<item>();
+				it->position.x = i * 60 + 100;
+				it->position.y = j * 60 + 100;
+			}
 		}
 	}
 }

@@ -2,14 +2,16 @@
 #include"../Library/GameObject.h"
 #include"Vector2.h"
 
-class itam : public GameObject
+class item : public GameObject
 {
+
 public:
-	itam();
-	~itam();
+	item();
+	~item();
 	void Update()override;
 	void Draw()override;
 
+	
 	int hImage;
 	VECTOR2 position;
 
