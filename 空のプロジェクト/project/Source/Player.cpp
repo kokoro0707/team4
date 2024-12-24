@@ -186,8 +186,8 @@ void Player::Update()
 		prevKeyRight = true;
 	}
 	
-	if (CheckHitKey(KEY_INPUT_SPACE)) {
-	//if(pad&PAD_INPUT_Z){
+	//if (CheckHitKey(KEY_INPUT_SPACE)) {
+	if(pad&PAD_INPUT_Z){
 		if (prevKey == false) {
 			Boll* st = Instantiate<Boll>();
 			st->position = position;
