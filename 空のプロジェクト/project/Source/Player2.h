@@ -32,6 +32,8 @@ public:
 	int dashspeed = 4;
 	float timer;
 
+	bool dead=false;
+
 private:
 	VECTOR2 baseNormalize;
 	VECTOR2 targetNormalize;
