@@ -23,9 +23,6 @@ Player2::~Player2()
 
 void Player2::Update()
 {
-	if (dead) {
-		DestroyMe();
-	}
 	center = VECTOR2(position.x, position.y);
 	GetJoypadAnalogInput(&InputX, &InputY, DX_INPUT_PAD2);
 	int pad = GetJoypadInputState(DX_INPUT_PAD2);
@@ -206,20 +203,6 @@ void Player2::Update()
 	if (outerProduct < 0)
 	{
 		angle = (2.0f * M_PI) - angle;
-	}
-	std::list<Boll*>bolls = FindGameObjects<Boll>();
-	for (Boll* bo : bolls) {
-		VECTOR2 sCenter;
-		sCenter.x = bo->position.x;
-		sCenter.y = bo->position.y;
-
-		VECTOR2 pCenter;
-		pCenter.x = position.x;
-		pCenter.y = position.y;
-		if (CircleHit(sCenter, pCenter,0)) {
-			dead = true;
-			bo->DestroyMe();
-		}
 	}
 }
 

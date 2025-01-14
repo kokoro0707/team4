@@ -149,8 +149,8 @@ void Player::Update()
 	else {
 		prevKeyLeft = true;
 	}
-	if (CheckHitKey(KEY_INPUT_D)) {
-	//if (InputX >= 100) {
+	//if (CheckHitKey(KEY_INPUT_D)) {
+	if (InputX >= 100) {
 		if (speed <= 2) {
 			speed += a;
 		}

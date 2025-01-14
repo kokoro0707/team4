@@ -18,7 +18,7 @@ TitleScene::~TitleScene()
 
 void TitleScene::Update()
 {
-	if (CheckHitKey(KEY_INPUT_P))
+	if (CheckHitKey(KEY_INPUT_SPACE))
 	{
 		for (int i = 0; i < 3; ++i) {
 	
