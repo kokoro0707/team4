@@ -5,7 +5,7 @@
 
 item::item()
 {
-	hImage = LoadGraph("data/iamge/Item2.png");
+	hImage = LoadGraph("data/image/Item2.png");
 
 	got = false;
 }
@@ -30,20 +30,14 @@ void item::Update()
 	if (CircleHit(playerPos, position, 60)) {  //円の当たり判定　　　　　　　　　　　　　　　
 		got = true;
 
-		counter = 20;
+		counter =-1;
 
 	}
 }
-
 void item::Draw()
 {
 
 	Stage* s = FindGameObject<Stage>();
 
-	DrawRectGraph(position.x, position.y, 0, 40, 40, 40, hImage, TRUE);
+	DrawRectGraph(position.x, position.y, 0, 64, 64, 64, hImage, TRUE);
 }
-
-
-
-
-
