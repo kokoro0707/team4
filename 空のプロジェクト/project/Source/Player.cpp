@@ -41,8 +41,8 @@ void Player::Update()
 	
 	Stage* s = FindGameObject<Stage>();
 
-	if (CheckHitKey(KEY_INPUT_W)) {
-	//if (InputY <= -100) {
+	//if (CheckHitKey(KEY_INPUT_W)) {
+	if (InputY <= -100) {
 		if (speed <= 2) {
 			speed += a;
 		}
@@ -186,14 +186,12 @@ void Player::Update()
 		prevKeyRight = true;
 	}
 	
-	if (CheckHitKey(KEY_INPUT_SPACE)) {
-	//if(pad&PAD_INPUT_Z){
+	//if (CheckHitKey(KEY_INPUT_SPACE)) {
+	if(pad&PAD_INPUT_Z){
 		if (prevKey == false) {
 			Boll* st = Instantiate<Boll>();
 			st->position = position;
 			
-			st->position.x += 30;
-			st->position.y += 5;
 		}
 		prevKey = true;
 	}

@@ -1,6 +1,7 @@
 #include "Player2.h"
 #include "Stage.h"
-#include"Boll.h"
+#include"Boll2.h"
+#include "Boll.h"
 #include "Target2.h"
 
 #define M_PI 3.14159265358979323846f
@@ -23,6 +24,9 @@ Player2::~Player2()
 
 void Player2::Update()
 {
+	if (dead) {
+		DestroyMe();
+	}
 	center = VECTOR2(position.x, position.y);
 	GetJoypadAnalogInput(&InputX, &InputY, DX_INPUT_PAD2);
 	int pad = GetJoypadInputState(DX_INPUT_PAD2);
@@ -176,7 +180,7 @@ void Player2::Update()
 	//if (CheckHitKey(KEY_INPUT_SPACE)) {
 	if (pad & PAD_INPUT_Z) {
 		if (prevKey == false) {
-			Boll* st = Instantiate<Boll>();
+			Boll2* st = Instantiate<Boll2>();
 			st->position = position;
 
 			st->position.x += 30;
@@ -203,6 +207,21 @@ void Player2::Update()
 	if (outerProduct < 0)
 	{
 		angle = (2.0f * M_PI) - angle;
+	}
+	std::list<Boll*>bolls = FindGameObjects<Boll>();
+	for (Boll* bo : bolls) {
+		VECTOR2 bCenter;
+		bCenter.x = bo->position.x + 10;
+		bCenter.y = bo->position.y + 10;
+
+		VECTOR2 pCenter;
+		pCenter.x = position.x + 30;
+		pCenter.y = position.y + 30;
+
+		if (CircleHit(bCenter, pCenter, 10 + 30)) {
+			dead = true;
+			bo->DestroyMe();
+		}
 	}
 }
 
