@@ -4,10 +4,18 @@
 #include <cassert>
 #include "Stage.h"
 #include "Player2.h"
+<<<<<<< HEAD
 #include "Target2.h"
 
 Boll2::Boll2() {
     hImage = LoadGraph("data/image/Effect.png");
+=======
+#include "Player.h"
+#include "Target2.h"
+
+Boll2::Boll2() {
+    hImage = LoadGraph("data/image/Efect.png");
+>>>>>>> Collision
     position.x = 10;
     position.y = 0;
     velocity.x = BALL_SPEED;
@@ -20,12 +28,21 @@ Boll2::~Boll2() {
 }
 
 void Boll2::Update() {
+<<<<<<< HEAD
     Target2* target2 = FindGameObject<Target2>();
 
     VECTOR2 to = VSub(target2->position2, position);
     to = VNorm(to);
     position = position + VScale(to, 6.0f);
 
+=======
+    //Target2* target2 = FindGameObject<Target2>();
+
+    //VECTOR2 to = VSub(target2->position2, position);
+    //to = VNorm(to);
+    //position = position + VScale(to, 6.0f);
+    position = position + VScale(shotDirection, 6.0f);
+>>>>>>> Collision
 
     // ‰æ–Ê’[”»’è(X•ûŒü)
     if ((position.x < 0) || (position.x > SCREEN_WIDTH)) {
@@ -45,7 +62,24 @@ void Boll2::Update() {
             DrawRectGraph(position.x, position.y, 40, 40, 80, 80, hImage, TRUE);
 
             // ‰~Œ`‚Ì“–‚½‚è”»’è‚ğ•`‰æ
+<<<<<<< HEAD
             DrawCircle(position.x + 32, position.y + 32, 40, GetColor(255, 0, 0));  // Ô‚¢‰~
+=======
+            DrawCircle(position.x  , position.y , 80, GetColor(255, 0, 0));  // Ô‚¢‰~
+            std::list< Player*> players = FindGameObjects<Player>();
+            for (Player* p : players) {
+                VECTOR2 EX;
+                EX.x = position.x ;
+                EX.y = position.y ;
+
+                VECTOR2 pCenter;
+                pCenter.x = p->position.x ;
+                pCenter.y = p->position.y ;
+                if (CircleHit(pCenter, EX, 20 + 80)) {
+                    p->hp -= 1;
+                }
+            }
+>>>>>>> Collision
         }
         else {
             // •Ç‚É“–‚½‚Á‚Ä‚¢‚È‚¢ê‡AŒ³‚Ì‰æ‘œ‚ğ•`‰æ
@@ -71,3 +105,13 @@ void Boll2::GetBallCenter(int* centerX, int* centerY) {
     *centerX = (int)position.x;
     *centerY = (int)position.y;
 }
+<<<<<<< HEAD
+=======
+
+void Boll2::Shot(VECTOR2 target, VECTOR2 startPosition)
+{
+    position = startPosition;
+    VECTOR2 to = VSub(target, position);
+    shotDirection = VNorm(to);
+}
+>>>>>>> Collision

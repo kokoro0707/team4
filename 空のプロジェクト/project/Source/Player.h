@@ -32,6 +32,10 @@ public:
 	float timer;
 	int BaImage;
 
+	bool dead = false;
+	int hp = 2;
+	int turbo = 150;
+
 private:
 	VECTOR2 baseNormalize;
 	VECTOR2 targetNormalize;

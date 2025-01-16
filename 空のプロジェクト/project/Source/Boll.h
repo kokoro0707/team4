@@ -20,9 +20,14 @@ public:
 	void Update() override;
 	void Draw() override;
 	bool isWallRight;
+<<<<<<< HEAD
+=======
+	bool IsWalLeft;
+>>>>>>> Collision
 	
 	int hImage; //画像
 	VECTOR2 position;
+	VECTOR2 shotDirection;
 	VECTOR2 velocity;
 	float timeElapsed;     // 経過時間
 	bool attacking;
@@ -30,7 +35,7 @@ public:
 	void GetBallCenter(int* centerX, int* centerY);			// ボールの中心座標の取得
 	void SetFlip(bool flagX, int flagY);					// 進行方向の反転
 
-
+		void Shot(VECTOR2 target, VECTOR2 startPosition);
 
 	
 

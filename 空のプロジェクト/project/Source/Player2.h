@@ -33,6 +33,10 @@ public:
 	float timer;
 
 	bool dead = false;
+<<<<<<< HEAD
+=======
+	int hp = 2;
+>>>>>>> Collision
 
 private:
 	VECTOR2 baseNormalize;
