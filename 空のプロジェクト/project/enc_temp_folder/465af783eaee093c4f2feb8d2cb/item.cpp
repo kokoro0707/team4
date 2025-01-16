@@ -40,5 +40,5 @@ void item::Draw()
 
 	Stage* s = FindGameObject<Stage>();
 
-	DrawRectGraph(position.x, position.y, 0, 64, 64, 128, hImage, TRUE);
+	DrawRectGraph(position.x, position.y, 64, 64, 64, 64, hImage, TRUE);
 }
