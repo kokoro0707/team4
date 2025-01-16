@@ -1,10 +1,5 @@
 #include "Player2.h"
 #include "Stage.h"
-<<<<<<< HEAD
-#include"Boll2.h"
-#include "Boll.h"
-=======
->>>>>>> Collision
 #include "Target2.h"
 #include "Screen.h"
 #include "Boll.h"
@@ -34,11 +29,7 @@ Player2::~Player2()
 
 void Player2::Update()
 {
-<<<<<<< HEAD
-	if (dead) {
-=======
 	if (hp <= 0) {
->>>>>>> Collision
 		DestroyMe();
 	}
 	center = VECTOR2(position.x, position.y);
@@ -206,13 +197,9 @@ void Player2::Update()
 	if (pad & PAD_INPUT_Z) {
 		if (prevKey == false) {
 			Boll2* st = Instantiate<Boll2>();
-<<<<<<< HEAD
-			st->position = position;
-=======
 			//st->position = position;
 			Target2* target2 = FindGameObject<Target2>();
 			st->Shot(target2->position2, position);
->>>>>>> Collision
 
 		}
 		prevKey = true;
@@ -240,20 +227,6 @@ void Player2::Update()
 	}
 	std::list<Boll*>bolls = FindGameObjects<Boll>();
 	for (Boll* bo : bolls) {
-<<<<<<< HEAD
-		VECTOR2 bCenter;
-		bCenter.x = bo->position.x + 10;
-		bCenter.y = bo->position.y + 10;
-
-		VECTOR2 pCenter;
-		pCenter.x = position.x + 30;
-		pCenter.y = position.y + 30;
-
-		if (CircleHit(bCenter, pCenter, 10 + 30)) {
-			dead = true;
-			bo->DestroyMe();
-		}
-=======
 		VECTOR2 pCenter;
 		pCenter.x = position.x + 30;
 		pCenter.y = position.y + 30;
@@ -265,7 +238,6 @@ void Player2::Update()
 			bo->DestroyMe();
 		}
 
->>>>>>> Collision
 	}
 }
 

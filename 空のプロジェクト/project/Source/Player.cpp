@@ -194,15 +194,6 @@ void Player::Update()
 	else {
 		prevKeyRight = true;
 	}
-<<<<<<< HEAD
-	
-	//if (CheckHitKey(KEY_INPUT_SPACE)) {
-	if(pad&PAD_INPUT_Z){
-		if (prevKey == false) {
-			Boll* st = Instantiate<Boll>();
-			st->position = position;
-			
-=======
 
 	//if (CheckHitKey(KEY_INPUT_SPACE)) {
 	if (pad & PAD_INPUT_Z) {
@@ -211,7 +202,6 @@ void Player::Update()
 			//st->position = position;
 			Target* target = FindGameObject<Target>();
 			st->Shot(target->position, position);
->>>>>>> Collision
 		}
 		prevKey = true;
 	}

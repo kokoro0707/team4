@@ -25,21 +25,14 @@ public:
 
 	int hImage; //画像
 	VECTOR2 position;
-<<<<<<< HEAD
-=======
 	VECTOR2 shotDirection;
->>>>>>> Collision
 	VECTOR2 velocity;
 	float timeElapsed;     // 経過時間
 	bool attacking;
 	bool CheckCollisionWithRectangle(float rectX, float rectY, float rectWidth, float rectHeight);
-<<<<<<< HEAD
-	void GetBallCenter(int* centerX, int* centerY);			// ボールの中心座標の取得
-=======
 	void GetBallCenter(int* centerX, int* centerY);	
 	
 	void Shot(VECTOR2 target, VECTOR2 startPosition);
->>>>>>> Collision
 
 
 

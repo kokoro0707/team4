@@ -5,7 +5,7 @@
 
 item::item()
 {
-	hImage = LoadGraph("data/image/Item2.png");
+	hImage = LoadGraph("data/iamge/Item2.png");
 
 	got = false;
 }
@@ -27,18 +27,23 @@ void item::Update()
 
 	Player* p = FindGameObject<Player>();        //相手のインスタンスを取得　　　
 	VECTOR2 playerPos = p->position;            //相手の座標を取得
-	if (CircleHit(playerPos, position, 40)) {  //円の当たり判定　　　　　　　　　　　　　　　
+	if (CircleHit(playerPos, position, 60)) {  //円の当たり判定　　　　　　　　　　　　　　　
 		got = true;
 
-		counter = 2;
+		counter = 20;
 
-		
 	}
 }
+
 void item::Draw()
 {
 
 	Stage* s = FindGameObject<Stage>();
 
-	DrawRectGraph(position.x, position.y, 0, 64, 64, 128, hImage, TRUE);
+	DrawRectGraph(position.x, position.y, 0, 40, 40, 40, hImage, TRUE);
 }
+
+
+
+
+

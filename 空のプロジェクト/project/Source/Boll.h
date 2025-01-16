@@ -20,10 +20,7 @@ public:
 	void Update() override;
 	void Draw() override;
 	bool isWallRight;
-<<<<<<< HEAD
-=======
 	bool IsWalLeft;
->>>>>>> Collision
 	
 	int hImage; //‰æ‘œ
 	VECTOR2 position;
