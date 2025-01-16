@@ -21,16 +21,16 @@ void Target2::Update()
 {
 	GetJoypadAnalogInputRight(&InputX2, &InputY2, DX_INPUT_PAD2);
 	if (InputY2 <= -100) {
-		position2.y -= 2;
+		position2.y -= 5;
 	}
 	if (InputY2 >= 100) {
-		position2.y += 2;
+		position2.y += 5;
 	}
 	if (InputX2 <= -100) {
-		position2.x -= 2;
+		position2.x -= 5;
 	}
 	if (InputX2 >= 100) {
-		position2.x += 2;
+		position2.x += 5;
 	}
 }
 void Target2::Draw()

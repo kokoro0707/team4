@@ -33,6 +33,7 @@ public:
 	float timer;
 
 	bool dead = false;
+	int hp = 2;
 
 private:
 	VECTOR2 baseNormalize;
