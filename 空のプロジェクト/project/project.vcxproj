@@ -152,6 +152,7 @@
     <ClInclude Include="Library\SceneManager.h" />
     <ClInclude Include="Library\Time.h" />
     <ClInclude Include="Source\Boll.h" />
+    <ClInclude Include="Source\Boll2.h" />
     <ClInclude Include="Source\BootScene.h" />
     <ClInclude Include="Source\config.h" />
     <ClInclude Include="Source\Player.h" />
@@ -182,6 +183,7 @@
     <ClCompile Include="Library\SceneManager.cpp" />
     <ClCompile Include="Library\Time.cpp" />
     <ClCompile Include="Source\Boll.cpp" />
+    <ClCompile Include="Source\Boll2.cpp" />
     <ClCompile Include="Source\BootScene.cpp" />
     <ClCompile Include="Source\item.cpp" />
     <ClCompile Include="Source\Player.cpp" />

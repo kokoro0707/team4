@@ -32,6 +32,12 @@ public:
 	int dashspeed = 4;
 	float timer;
 
+	bool dead = false;
+<<<<<<< HEAD
+=======
+	int hp = 2;
+>>>>>>> Collision
+
 private:
 	VECTOR2 baseNormalize;
 	VECTOR2 targetNormalize;

@@ -3,11 +3,13 @@
 #include "VECTOR2.h"
 
 
-class Boll : public GameObject {
+
+class Boll2 : public GameObject {
 private:
-	
+
 	const int BALL_SPEED = 5;
-//	int ballVx, ballVy;				//	ボール速度(フレーム毎)
+
+	//	int ballVx, ballVy;				//	ボール速度(フレーム毎)
 	int radius;//	半径
 	VECTOR2 baseNormalize;
 	VECTOR2 targetNormalize;
@@ -15,29 +17,34 @@ private:
 	float timeHitWall;  // 壁に当たった時刻（秒）
 
 public:
-	Boll();
-	~Boll();
+	Boll2();
+	~Boll2();
 	void Update() override;
 	void Draw() override;
 	bool isWallRight;
-<<<<<<< HEAD
-=======
-	bool IsWalLeft;
->>>>>>> Collision
-	
+
 	int hImage; //画像
 	VECTOR2 position;
+<<<<<<< HEAD
+=======
 	VECTOR2 shotDirection;
+>>>>>>> Collision
 	VECTOR2 velocity;
 	float timeElapsed;     // 経過時間
 	bool attacking;
 	bool CheckCollisionWithRectangle(float rectX, float rectY, float rectWidth, float rectHeight);
+<<<<<<< HEAD
 	void GetBallCenter(int* centerX, int* centerY);			// ボールの中心座標の取得
-	void SetFlip(bool flagX, int flagY);					// 進行方向の反転
-
-		void Shot(VECTOR2 target, VECTOR2 startPosition);
-
+=======
+	void GetBallCenter(int* centerX, int* centerY);	
 	
+	void Shot(VECTOR2 target, VECTOR2 startPosition);
+>>>>>>> Collision
+
+
+
+
+
 
 };
 

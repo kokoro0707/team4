@@ -1,9 +1,18 @@
 #include "Player2.h"
 #include "Stage.h"
-#include"Boll.h"
+<<<<<<< HEAD
+#include"Boll2.h"
+#include "Boll.h"
+=======
+>>>>>>> Collision
 #include "Target2.h"
+#include "Screen.h"
+#include "Boll.h"
+#include "Boll2.h"
+#include "Pad.h"
 
 #define M_PI 3.14159265358979323846f
+
 
 Player2::Player2()
 {
@@ -14,6 +23,8 @@ Player2::Player2()
 
 	center = VECTOR2(position.x, position.y);
 	baseNormalize = VECTOR2(0.0f, -1.0f);
+
+	angle = 0.0f;
 }
 
 Player2::~Player2()
@@ -23,9 +34,26 @@ Player2::~Player2()
 
 void Player2::Update()
 {
+<<<<<<< HEAD
+	if (dead) {
+=======
+	if (hp <= 0) {
+>>>>>>> Collision
+		DestroyMe();
+	}
 	center = VECTOR2(position.x, position.y);
 	GetJoypadAnalogInput(&InputX, &InputY, DX_INPUT_PAD2);
 	int pad = GetJoypadInputState(DX_INPUT_PAD2);
+
+	//ImGui‚ğg‚¤‚Æ‚«(g‚¤‚Æ‚«‚ÍŠÖ”‚ğ.h‚É“ü—Í‚µ‚Ä‚©‚ç)
+	/* timer += Time::DeltaTime();
+	int count = 3;
+	ImGui::Begin("Variables");
+	ImGui::InputFloat("position", &position); position‚ÌŠ‚Íg‚Á‚Ä‚¢‚éŠÖ”‚ğ“ü—Í‚·‚é
+	ImGui::InputInt("COUNT", &count);
+	ImGui::End(); */
+
+
 	Stage* s = FindGameObject<Stage>();
 
 	//if (CheckHitKey(KEY_INPUT_W)) {
@@ -134,8 +162,9 @@ void Player2::Update()
 		}
 	}
 	else {
-		prevKeyRight = true;
+		prevKeyLeft = true;
 	}
+
 	//if (CheckHitKey(KEY_INPUT_D)) {
 	if (InputX >= 100) {
 		if (speed <= 2) {
@@ -176,17 +205,22 @@ void Player2::Update()
 	//if (CheckHitKey(KEY_INPUT_SPACE)) {
 	if (pad & PAD_INPUT_Z) {
 		if (prevKey == false) {
-			Boll* st = Instantiate<Boll>();
+			Boll2* st = Instantiate<Boll2>();
+<<<<<<< HEAD
 			st->position = position;
+=======
+			//st->position = position;
+			Target2* target2 = FindGameObject<Target2>();
+			st->Shot(target2->position2, position);
+>>>>>>> Collision
 
-			st->position.x += 30;
-			st->position.y += 5;
 		}
 		prevKey = true;
 	}
 	else {
 		prevKey = false;
 	}
+
 	Target2* target2 = FindGameObject<Target2>();
 	if (target2 == nullptr) {
 		return;
@@ -203,6 +237,35 @@ void Player2::Update()
 	if (outerProduct < 0)
 	{
 		angle = (2.0f * M_PI) - angle;
+	}
+	std::list<Boll*>bolls = FindGameObjects<Boll>();
+	for (Boll* bo : bolls) {
+<<<<<<< HEAD
+		VECTOR2 bCenter;
+		bCenter.x = bo->position.x + 10;
+		bCenter.y = bo->position.y + 10;
+
+		VECTOR2 pCenter;
+		pCenter.x = position.x + 30;
+		pCenter.y = position.y + 30;
+
+		if (CircleHit(bCenter, pCenter, 10 + 30)) {
+			dead = true;
+			bo->DestroyMe();
+		}
+=======
+		VECTOR2 pCenter;
+		pCenter.x = position.x + 30;
+		pCenter.y = position.y + 30;
+		VECTOR2 bCenter;
+		bCenter.x = bo->position.x + 15;
+		bCenter.y = bo->position.y + 15;
+		if (CircleHit(bCenter, pCenter, 15 + 30)) {
+			hp -= 1;
+			bo->DestroyMe();
+		}
+
+>>>>>>> Collision
 	}
 }
 
