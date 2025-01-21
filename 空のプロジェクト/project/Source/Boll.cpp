@@ -38,6 +38,7 @@ void Boll::Update() {
 
     Stage* s = FindGameObject<Stage>();
     if (s->IsWallRight(position) > 0) {
+        s->Damage(position);
         if (isWallRight) {
             // •Ç‚É“–‚½‚Á‚Ä‚¢‚éê‡
 // •Ç‚É“–‚½‚Á‚Ä‚¢‚éê‡A•Ê‚Ì‰æ‘œ‚ğ•`‰æ
